@@ -93,12 +93,12 @@ export default function Home() {
       images: [
         "/images/projects/project6/smarcaro1.JPG", 
         "/images/projects/project6/smarcaro2.JPG", 
-        "/images/projects/project6/smarcaro3.JPG",
+        "/images/projects/project6/smarcaro3.jpg",
         "/images/projects/project6/smarcaro4.JPG",
         "/images/projects/project6/smarcaro5.JPG",
-        "/images/projects/project6/smarcaro6.JPG",
-        "/images/projects/project6/smarcaro7.JPG",
-        "/images/projects/project6/smarcaro8.JPG"
+        "/images/projects/project6/smarcaro6.jpg",
+        "/images/projects/project6/smarcaro7.jpg",
+        "/images/projects/project6/smarcaro8.jpg"
       ],
       tools: ["Adobe Photoshop", "Adobe Illustrator", "Lightroom"],
       link: "https://www.instagram.com/smarcaro/",
