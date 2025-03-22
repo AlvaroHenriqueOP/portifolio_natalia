@@ -1,5 +1,5 @@
 {
-  "name": "natalia",
+  "name": "portfolio-design",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,12 +9,23 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "next": "15.2.3"
+    "@emailjs/browser": "^4.4.1",
+    "@fortawesome/fontawesome-svg-core": "^6.7.2",
+    "@fortawesome/free-brands-svg-icons": "^6.7.2",
+    "@fortawesome/free-solid-svg-icons": "^6.7.2",
+    "@fortawesome/react-fontawesome": "^0.2.2",
+    "@heroicons/react": "^2.2.0",
+    "aos": "^2.3.4",
+    "framer-motion": "^12.5.0",
+    "next": "^13.4.19",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-icons": "^5.5.0",
+    "swiper": "^11.2.5"
   },
   "devDependencies": {
-    "@tailwindcss/postcss": "^4",
-    "tailwindcss": "^4"
+    "autoprefixer": "^10.4.14",
+    "postcss": "^8.4.27",
+    "tailwindcss": "^3.3.3"
   }
 }
