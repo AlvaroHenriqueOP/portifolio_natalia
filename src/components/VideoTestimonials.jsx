@@ -1,12 +1,14 @@
 import { useState, useRef } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination } from 'swiper/modules';
+import { Navigation, Pagination, EffectFade } from 'swiper/modules';
 import { PlayIcon, PauseIcon } from '@heroicons/react/24/solid';
+import { motion } from 'framer-motion';
 
 // Importando estilos do Swiper
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import 'swiper/css/effect-fade';
 
 const VideoTestimonial = ({ video, name, company, content }) => {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -38,14 +40,25 @@ const VideoTestimonial = ({ video, name, company, content }) => {
   };
 
   return (
-    <div className="rounded-xl p-4 sm:p-6 md:p-8 md:px-12 lg:px-16 shadow-md transform hover:translate-y-[-5px] hover:shadow-lg transition-all duration-300 border border-transparent"
-        style={{
-          background: 'var(--card-bg)',
-          boxShadow: 'var(--card-shadow)'
-        }}>
+    <motion.div 
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -20 }}
+      transition={{ duration: 0.5 }}
+      className="rounded-xl p-4 sm:p-6 md:p-8 md:px-12 lg:px-16 shadow-md transform hover:translate-y-[-5px] hover:shadow-lg transition-all duration-300 border border-transparent"
+      style={{
+        background: 'var(--card-bg)',
+        boxShadow: 'var(--card-shadow)'
+      }}
+    >
       <div className="flex flex-col lg:flex-row gap-4 sm:gap-6 md:gap-8 items-center">
         {/* Lado esquerdo - Conteúdo e informações da pessoa */}
-        <div className="w-full lg:w-3/5 pl-0 lg:pl-4">
+        <motion.div 
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="w-full lg:w-3/5 pl-0 lg:pl-4"
+        >
           <div className="text-3xl sm:text-4xl gradient-text mb-2 sm:mb-4">"</div>
           <p className="text-base sm:text-lg text-gray-700 dark:text-gray-300 mb-4 sm:mb-6 italic">
             {content}
@@ -63,10 +76,15 @@ const VideoTestimonial = ({ video, name, company, content }) => {
               <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400">{company}</p>
             </div>
           </div>
-        </div>
+        </motion.div>
         
         {/* Lado direito - Vídeo em formato de celular */}
-        <div className="w-full lg:w-2/5 mt-6 lg:mt-0 flex justify-center">
+        <motion.div 
+          initial={{ opacity: 0, x: 20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+          className="w-full lg:w-2/5 mt-6 lg:mt-0 flex justify-center"
+        >
           <div 
             className="mx-auto relative rounded-3xl overflow-hidden bg-black shadow-xl w-64 h-[360px] sm:w-72 sm:h-[420px] md:w-80 md:h-[460px]"
             style={{
@@ -106,9 +124,9 @@ const VideoTestimonial = ({ video, name, company, content }) => {
               <div className="w-12 sm:w-14 md:w-16 h-1 bg-gray-300 rounded-full"></div>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
@@ -132,9 +150,12 @@ const VideoTestimonials = () => {
 
   return (
     <Swiper
-      modules={[Navigation, Pagination]}
+      modules={[Navigation, Pagination, EffectFade]}
       spaceBetween={30}
       slidesPerView={1}
+      effect="fade"
+      fadeEffect={{ crossFade: true }}
+      speed={800}
       navigation={{
         enabled: true,
         hideOnClick: true

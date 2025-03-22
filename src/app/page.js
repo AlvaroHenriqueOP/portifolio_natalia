@@ -240,7 +240,7 @@ export default function Home() {
         from_name: form.from_name.value,
         from_email: form.from_email.value,
         message: form.message.value,
-        to_name: 'Natália Gomes'
+        to_name: 'Natalia Gomes'
       };
       
       console.log('Dados do formulário:', templateParams);
@@ -286,7 +286,7 @@ export default function Home() {
           <div className="h-10 w-10 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center text-white font-bold text-lg transform hover:rotate-12 transition-transform duration-300 shadow-lg">
             NG
           </div>
-          <span className="ml-3 font-medium text-lg">Natália Gomes</span>
+          <span className="ml-3 font-medium text-lg">Natalia Gomes</span>
         </div>
         
         {/* Desktop Menu */}
@@ -343,23 +343,10 @@ export default function Home() {
         </nav>
         
         <div className="flex items-center">
-          {/* Hamburger Button */}
-          <button 
-            className="hamburger-button" 
-            onClick={toggleMobileMenu}
-            aria-label="Menu principal"
-          >
-            <div className={`hamburger-icon ${mobileMenuOpen ? 'open' : ''}`}>
-              <span></span>
-              <span></span>
-              <span></span>
-            </div>
-          </button>
-          
           {/* Theme Toggle Button */}
           <button 
             onClick={toggleTheme}
-            className="flex items-center justify-center p-2 ml-4 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-white transition-colors duration-300"
+            className="flex items-center justify-center p-2 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-white transition-colors duration-300"
             aria-label="Alternar tema"
           >
             {darkMode ? (
@@ -371,6 +358,19 @@ export default function Home() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
               </svg>
             )}
+          </button>
+          
+          {/* Hamburger Button */}
+          <button 
+            className="hamburger-button ml-4" 
+            onClick={toggleMobileMenu}
+            aria-label="Menu principal"
+          >
+            <div className={`hamburger-icon ${mobileMenuOpen ? 'open' : ''}`}>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
           </button>
         </div>
       </header>
@@ -759,9 +759,9 @@ export default function Home() {
             <div className="col-span-1 md:col-span-1">
               <div className="flex items-center mb-4">
                 <div className="h-10 w-10 rounded-full bg-gradient-to-r from-primary to-secondary flex items-center justify-center text-white font-bold text-lg hover:rotate-12 transition-transform duration-300">
-                  D
+                  NG
                 </div>
-                <span className="ml-2 text-xl font-bold gradient-text">Natália Gomes</span>
+                <span className="ml-2 text-xl font-bold gradient-text">Natalia Gomes</span>
               </div>
               <p className="text-gray-300 mb-4">
                 Criando experiências digitais memoráveis que conectam marcas com pessoas.
@@ -822,7 +822,7 @@ export default function Home() {
           </div>
           
           <div className="border-t border-gray-700 pt-8 flex flex-col md:flex-row justify-between items-center">
-            <p className="text-gray-400 text-sm mb-4 md:mb-0">© 2025 Natália Gomes. Todos os direitos reservados.</p>
+            <p className="text-gray-400 text-sm mb-4 md:mb-0">© 2025 Natalia Gomes. Todos os direitos reservados.</p>
             <div className="flex items-center gap-2">
             </div>
           </div>
