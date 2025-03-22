@@ -91,11 +91,14 @@ export default function Home() {
       description: "Como social media da Smarçaro Móveis, desenvolvo conteúdos que traduzem a sofisticação e qualidade dos produtos vendidos na loja. Explore a elegância e funcionalidade de cada peça clicando no botão Ver Projeto Online para conferir mais no Instagram oficial da loja!",
       coverImage: "/images/projects/project6/smarcarocapa.jpg",
       images: [
-        "/images/projects/project6/smarcaro1.jpg", 
-        "/images/projects/project6/smarcaro2.jpg", 
+        "/images/projects/project6/smarcaro1.JPG", 
+        "/images/projects/project6/smarcaro2.JPG", 
         "/images/projects/project6/smarcaro3.jpg",
         "/images/projects/project6/smarcaro4.jpg",
-        "/images/projects/project6/smarcaro5.jpg"
+        "/images/projects/project6/smarcaro5.jpg",
+        "/images/projects/project6/smarcaro6.jpg",
+        "/images/projects/project6/smarcaro7.jpg",
+        "/images/projects/project6/smarcaro8.jpg"
       ],
       tools: ["Adobe Photoshop", "Adobe Illustrator", "Lightroom"],
       link: "https://www.instagram.com/smarcaro/",
@@ -356,7 +359,7 @@ export default function Home() {
           {/* Theme Toggle Button */}
           <button 
             onClick={toggleTheme}
-            className="hidden md:flex items-center justify-center p-2 ml-4 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-white transition-colors duration-300"
+            className="flex items-center justify-center p-2 ml-4 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-white transition-colors duration-300"
             aria-label="Alternar tema"
           >
             {darkMode ? (
@@ -427,6 +430,31 @@ export default function Home() {
           >
             Contato
           </Link>
+          
+          {/* Botão de tema no menu móvel */}
+          <div className="py-4 flex justify-center">
+            <button 
+              onClick={() => { toggleTheme(); setMobileMenuOpen(false); document.body.style.overflow = 'auto'; }}
+              className="flex items-center justify-center p-3 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-white transition-colors duration-300"
+              aria-label="Alternar tema"
+            >
+              {darkMode ? (
+                <div className="flex items-center gap-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-yellow-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                  </svg>
+                  <span>Modo Claro</span>
+                </div>
+              ) : (
+                <div className="flex items-center gap-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                  </svg>
+                  <span>Modo Escuro</span>
+                </div>
+              )}
+            </button>
+          </div>
         </nav>
       </div>
 
